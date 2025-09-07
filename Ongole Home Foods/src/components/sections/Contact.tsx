@@ -8,8 +8,8 @@ export default function Contact() {
                     <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">Contact Us</h2>
                     <p className="mt-3 opacity-80">Have a custom request or bulk order? Reach out and we’ll assist you.</p>
                     <ul className="mt-6 space-y-3 text-sm">
-                        <li className="flex items-center gap-2"><PhoneIcon className="h-5 w-5" /> +91- 63042 14514</li>
-                        <li className="flex items-center gap-2"><EnvelopeIcon className="h-5 w-5" /> hello@ongolehomefoods.com</li>
+                        <li className="flex items-center gap-2"><PhoneIcon className="h-5 w-5" /> +91 63042 14514</li>
+                        <li className="flex items-center gap-2"><EnvelopeIcon className="h-5 w-5" /> ongolehomefoods@gmail.com</li>
                     </ul>
                 </div>
                 <form className="rounded-xl border p-6">

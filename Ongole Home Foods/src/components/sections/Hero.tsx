@@ -35,7 +35,7 @@ export default function Hero() {
 
                         </div>
                     </div>
-                    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl border border-[#ffc107]/90 bg-white/60">
+                    <div className="relative aspect-[4/3] w-full md:block hidden overflow-hidden rounded-xl border border-[#ffc107]/90 bg-white/60">
                         <Image src="/Images/Logo/logo.png" alt="Delicious home foods" fill className="object-contain p-6 dark:invert" />
                     </div>
                 </div>

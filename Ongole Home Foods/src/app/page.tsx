@@ -11,9 +11,10 @@ export default function Home() {
     <div className="font-[family-name:var(--font-geist-sans)]">
       <main>
         <Hero />
+        <DailyMenuHome />
         <About />
         <Stats />
-        <DailyMenuHome />
+        
         <PicklesHome />
         {/* <Products /> */}
         <Testimonials />
