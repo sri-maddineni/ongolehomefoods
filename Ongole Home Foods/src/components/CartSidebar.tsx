@@ -72,14 +72,71 @@ export default function CartSidebar() {
             {isModalOpen && (
                 <div className="fixed inset-0 z-50 md:hidden">
                     <div className="absolute inset-0 bg-black/50" onClick={() => setIsModalOpen(false)} />
-                    <div className="absolute bottom-0 left-0 right-0 max-h-[70vh] overflow-y-auto rounded-t-xl border bg-white p-4">
-                        <div className="mb-4 flex items-center justify-between">
-                            <h2 className="text-lg font-semibold">Your Cart</h2>
-                            <button onClick={() => setIsModalOpen(false)} className="p-1">
+                    <div className="absolute bottom-0 left-0 right-0 max-h-[80vh] overflow-y-auto rounded-t-xl border bg-white p-6">
+                        <div className="mb-6 flex items-center justify-between">
+                            <h2 className="text-xl font-semibold">Your Cart</h2>
+                            <button onClick={() => setIsModalOpen(false)} className="rounded-full p-2 hover:bg-gray-100">
                                 <XMarkIcon className="h-6 w-6" />
                             </button>
                         </div>
-                        <CartContent />
+                        <div className="space-y-4">
+                            {items.length === 0 ? (
+                                <div className="py-8 text-center text-gray-500">
+                                    <ShoppingCartIcon className="mx-auto h-12 w-12 text-gray-300" />
+                                    <p className="mt-2">Your cart is empty</p>
+                                    <p className="text-sm">Add some items to get started</p>
+                                </div>
+                            ) : (
+                                <>
+                                    <div className="space-y-4">
+                                        {items.map((i) => (
+                                            <div key={i.id} className="flex items-center justify-between rounded-lg border p-4">
+                                                <div className="flex-1 min-w-0">
+                                                    <div className="font-medium text-gray-900">{i.name}</div>
+                                                    <div className="text-sm text-gray-500">₹{i.unitPrice} each</div>
+                                                </div>
+                                                <div className="flex items-center gap-3">
+                                                    <input
+                                                        type="number"
+                                                        min={1}
+                                                        value={i.quantity}
+                                                        onChange={(e) => updateItemQuantity(i.id, Math.max(1, Number(e.target.value)))}
+                                                        className="w-16 rounded-md border border-gray-300 bg-white px-3 py-2 text-center text-sm focus:border-[var(--accent-red)] focus:outline-none focus:ring-1 focus:ring-[var(--accent-red)]"
+                                                    />
+                                                    <div className="w-20 text-right font-medium">₹{i.unitPrice * i.quantity}</div>
+                                                    <button
+                                                        onClick={() => removeItem(i.id)}
+                                                        className="rounded-full p-1 text-gray-400 hover:bg-red-50 hover:text-red-600"
+                                                    >
+                                                        <XMarkIcon className="h-5 w-5" />
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                    <div className="border-t pt-4">
+                                        <div className="flex items-center justify-between text-lg font-semibold">
+                                            <span>Subtotal</span>
+                                            <span>₹{subtotal}</span>
+                                        </div>
+                                    </div>
+                                    <div className="flex gap-3">
+                                        <Link
+                                            href="/cart"
+                                            className="flex-1 rounded-lg border border-gray-300 px-4 py-3 text-center font-medium text-gray-700 hover:bg-gray-50"
+                                        >
+                                            View Cart
+                                        </Link>
+                                        <Link
+                                            href="/checkout"
+                                            className="flex-1 rounded-lg bg-[var(--accent-red)] px-4 py-3 text-center font-medium text-white hover:brightness-95"
+                                        >
+                                            Checkout
+                                        </Link>
+                                    </div>
+                                </>
+                            )}
+                        </div>
                     </div>
                 </div>
             )}
