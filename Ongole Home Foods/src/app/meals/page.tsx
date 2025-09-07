@@ -26,18 +26,18 @@ export default function MealsPage() {
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
             <div className="grid gap-8 lg:grid-cols-3">
                 <div className="lg:col-span-2">
-                    <div className="mb-4 rounded-lg border border-[#ffc107]/40 bg-[#fff8e1] p-3 text-sm">
+                    <div className="mb-4 rounded-lg border border-[var(--accent-yellow)]/40 bg-[#fff8e1] p-3 text-sm">
                         Tomorrow’s menu updates at <span className="font-medium">6:00 PM</span>. Orders close at <span className="font-medium">12:00 PM</span> for next day.
                     </div>
                     <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">Meals</h1>
-                    <p  className="mt-2 opacity-80">Today&#39;s Orders close at 12:00 PM for next day.</p>
-                    <p className="mt-2 opacity-80">Tomorrow's menu updates daily at 6:00 PM.</p>
+                    <p className="mt-2 opacity-80">Today&#39;s Orders close at 12:00 PM for next day.</p>
+                    <p className="mt-2 opacity-80">Tomorrow&#39;s menu updates daily at 6:00 PM.</p>
 
                     <div className="mt-6 rounded-xl border p-4">
                         <h2 className="font-medium">Extras</h2>
                         <div className="mt-3 flex flex-wrap gap-3 text-sm">
-                            <button onClick={() => toggle("extraCurry")} className={`rounded-full border px-3 py-2 ${extras.extraCurry ? "bg-foreground text-background" : ""}`}>Extra Curry (+₹20)</button>
-                            <button onClick={() => toggle("curd")} className={`rounded-full border px-3 py-2 ${extras.curd ? "bg-foreground text-background" : ""}`}>Curd (+₹10)</button>
+                            <button onClick={() => toggle("extraCurry")} className={`rounded-full border px-3 py-2 ${extras.extraCurry ? "bg-[var(--accent-green)] text-white" : ""}`}>Extra Curry (+₹20)</button>
+                            <button onClick={() => toggle("curd")} className={`rounded-full border px-3 py-2 ${extras.curd ? "bg-[var(--accent-green)] text-white" : ""}`}>Curd (+₹10)</button>
                         </div>
                     </div>
 

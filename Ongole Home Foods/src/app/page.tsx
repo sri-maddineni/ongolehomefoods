@@ -1,6 +1,5 @@
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
-import Products from "@/components/sections/Products";
 import Testimonials from "@/components/sections/Testimonials";
 import Contact from "@/components/sections/Contact";
 import Stats from "../components/sections/Stats";

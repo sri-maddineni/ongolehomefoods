@@ -3,6 +3,12 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --accent-red: #880808;
+  /* deep chili red */
+  --accent-yellow: #ffc107;
+  /* turmeric */
+  --accent-green: #2e7d32;
+  /* coriander green */
 }
 
 @theme inline {
@@ -16,6 +22,9 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --accent-red: #ff6f6f;
+    --accent-yellow: #ffd54f;
+    --accent-green: #66bb6a;
   }
 }
 

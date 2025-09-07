@@ -10,12 +10,16 @@ export default function Hero() {
                 <div className="grid items-center gap-10 lg:grid-cols-2">
                     <div>
                         <div className="flex flex-col">
-                            <span className="text-lg font-bold tracking-tight text-[#9c1c1c] sm:text-2xl md:text-3xl">
+                            <h1 className="text-lg font-bold tracking-tight text-[var(--accent-red)] sm:text-2xl my-2 text-center md:text-3xl">
                                 Taste the Tradition of
-                            </span>
-                            <span className="text-4xl font-semibold tracking-tight text-gray-700 sm:text-5xl md:text-6xl">
-                                Home made Quality foods.
-                            </span>
+                            </h1>
+                            <h1 className="text-4xl font-semibold tracking-tight text-gray-700 sm:text-5xl my-2 text-center md:text-6xl">
+                                Ongole Home Foods
+                            </h1>
+                            <h1 className="text-xl font-semibold tracking-tight text-amber-700 sm:text-5xl my-2 text-center md:text-2xl">
+                             Healthy | Homely | Affordable  <br />  
+                             {/* Home made Quality foods. */}
+                            </h1>
                         </div>
 
                         <p className="mt-4 max-w-prose text-base opacity-80 sm:text-lg">
@@ -23,9 +27,9 @@ export default function Hero() {
                             Order for family, functions, or gifting.
                         </p>
                         <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                            <Link href="/pickles" className="inline-flex items-center justify-center rounded-full  bg-[#2e7d00] border border-[#2e7d32]  px-6 py-3 text-white  hover:bg-[#2e7d32] hover:text-white hover:border-[#2e7d32]  transition-colors duration-200" ><SparklesIcon className="mr-2 h-5 w-5" /> Pickles
+                            <Link href="/pickles" className="inline-flex items-center justify-center rounded-full bg-[var(--accent-green)] border border-[var(--accent-green)] px-6 py-3 text-white hover:brightness-95 transition-colors duration-200" ><SparklesIcon className="mr-2 h-5 w-5" /> Pickles
                             </Link>
-                            <Link href="/meals" className="inline-flex items-center justify-center rounded-full bg-[#b71c1c] px-6 py-3 text-white shadow hover:brightness-95 ">
+                            <Link href="/meals" className="inline-flex items-center justify-center rounded-full bg-[var(--accent-red)] px-6 py-3 text-white shadow hover:brightness-95 ">
                                 Plate Meals  <ArrowRightIcon className="ml-2 h-5 w-5" />
                             </Link>
 

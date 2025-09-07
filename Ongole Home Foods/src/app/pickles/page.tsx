@@ -50,17 +50,17 @@ function ItemCountBadge({ idPrefix }: { idPrefix: string }) {
         .filter((i) => i.id.startsWith(idPrefix))
         .reduce((n, i) => n + i.quantity, 0);
     if (!count) return null;
-    return <span className="rounded-full bg-[#880808] px-2 py-0.5 text-xs text-white">{count}</span>;
+    return <span className="rounded-full bg-[var(--accent-red)] px-2 py-0.5 text-xs text-white">{count}</span>;
 }
 
 function SizeButton({ size, price, id, onClick }: { size: Size; price: number; id: string; onClick: () => void }) {
     const { items } = useCart();
     const count = items.find((i) => i.id === id)?.quantity ?? 0;
     return (
-        <button onClick={onClick} className="relative rounded-full border px-3 py-2 hover:bg-foreground hover:text-background">
+        <button onClick={onClick} className="relative rounded-full border px-3 py-2 hover:bg-[var(--accent-green)] hover:text-white">
             {size} – ₹{price}
             {count > 0 && (
-                <span className="absolute -right-2 -top-2 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-[#2e7d32] px-1 text-xs text-white">{count}</span>
+                <span className="absolute -right-2 -top-2 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-[var(--accent-green)] px-1 text-xs text-white">{count}</span>
             )}
         </button>
     );
