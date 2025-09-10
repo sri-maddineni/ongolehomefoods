@@ -23,16 +23,52 @@ export default function CartSidebar() {
                                 <div className="text-xs opacity-70">₹{i.unitPrice}</div>
                             </div>
                             <div className="flex items-center gap-1">
-                                <input
-                                    type="number"
-                                    min={1}
-                                    value={i.quantity}
-                                    onChange={(e) => updateItemQuantity(i.id, Math.max(1, Number(e.target.value)))}
-                                    className="w-10 rounded border bg-background px-1 py-0.5 text-xs md:w-12 md:rounded-md md:py-1 md:text-sm"
-                                />
-                                <div className="w-12 text-right text-xs md:w-14 md:text-sm">₹{i.unitPrice * i.quantity}</div>
-                                <button onClick={() => removeItem(i.id)} className="text-xs underline">×</button>
+
+
+
+                                <div className="flex items-center border rounded-md overflow-hidden">
+                                    {/* Decrease button */}
+                                    <button
+                                        onClick={() => updateItemQuantity(i.id, Math.max(1, i.quantity - 1))}
+                                        className="px-2 py-1 text-sm font-bold hover:bg-gray-100"
+                                    >
+                                        –
+                                    </button>
+
+                                    {/* Quantity (non-editable but centered) */}
+                                    <input
+                                        type="number"
+                                        min={1}
+                                        value={i.quantity}
+                                        onChange={(e) =>
+                                            updateItemQuantity(i.id, Math.max(1, Number(e.target.value)))
+                                        }
+                                        className="w-12 text-center text-sm border-x bg-white focus:outline-none"
+                                    />
+
+                                    {/* Increase button */}
+                                    <button
+                                        onClick={() => updateItemQuantity(i.id, i.quantity + 1)}
+                                        className="px-2 py-1 text-sm font-bold hover:bg-gray-100"
+                                    >
+                                        +
+                                    </button>
+                                </div>
+
+                                {/* Total price */}
+                                <div className="w-12 text-right text-xs md:w-14 md:text-sm">
+                                    ₹{i.unitPrice * i.quantity}
+                                </div>
+
+                                {/* Remove button */}
+                                <button
+                                    onClick={() => removeItem(i.id)}
+                                    className="text-s text-red-500 hover:bg-red-100 hover:text-red-700 rounded-full p-1 ml-1"
+                                >
+                                    X
+                                </button>
                             </div>
+
                         </div>
                     ))}
                 </div>
@@ -90,26 +126,58 @@ export default function CartSidebar() {
                                 <>
                                     <div className="space-y-4">
                                         {items.map((i) => (
-                                            <div key={i.id} className="flex items-center justify-between rounded-lg border p-4">
+                                            <div key={i.id} className="flex flex-col">
                                                 <div className="flex-1 min-w-0">
-                                                    <div className="font-medium text-gray-900">{i.name}</div>
-                                                    <div className="text-sm text-gray-500">₹{i.unitPrice} each</div>
+                                                    <div className="flex items-center gap-2">
+                                                        <span className="font-medium text-gray-900">{i.name}</span>
+                                                        <span className="text-sm text-gray-500">₹{i.unitPrice} each</span>
+                                                    </div>
                                                 </div>
-                                                <div className="flex items-center gap-3">
-                                                    <input
-                                                        type="number"
-                                                        min={1}
-                                                        value={i.quantity}
-                                                        onChange={(e) => updateItemQuantity(i.id, Math.max(1, Number(e.target.value)))}
-                                                        className="w-16 rounded-md border border-gray-300 bg-white px-3 py-2 text-center text-sm focus:border-[var(--accent-red)] focus:outline-none focus:ring-1 focus:ring-[var(--accent-red)]"
-                                                    />
-                                                    <div className="w-20 text-right font-medium">₹{i.unitPrice * i.quantity}</div>
-                                                    <button
-                                                        onClick={() => removeItem(i.id)}
-                                                        className="rounded-full p-1 text-gray-400 hover:bg-red-50 hover:text-red-600"
-                                                    >
-                                                        <XMarkIcon className="h-5 w-5" />
-                                                    </button>
+                                                <div  className="flex items-center justify-between rounded-lg border p-1 mt-2">
+
+                                                    <div className="flex items-center gap-2 w-full">
+                                                        {/* Quantity stepper */}
+                                                        <div className="flex items-center rounded-md border border-amber-600 bg-white overflow-hidden">
+                                                            {/* Decrease button */}
+                                                            <button
+                                                                onClick={() => updateItemQuantity(i.id, Math.max(1, i.quantity - 1))}
+                                                                className="px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100"
+                                                            >
+                                                                –
+                                                            </button>
+
+                                                            {/* Quantity input */}
+                                                            <input
+                                                                type="number"
+                                                                min={1}
+                                                                value={i.quantity}
+                                                                onChange={(e) => updateItemQuantity(i.id, Math.max(1, Number(e.target.value)))}
+                                                                className="w-14 text-center text-sm border-x border-gray-300 focus:border-[var(--accent-red)] focus:outline-none focus:ring-1 focus:ring-[var(--accent-red)]"
+                                                            />
+
+                                                            {/* Increase button */}
+                                                            <button
+                                                                onClick={() => updateItemQuantity(i.id, i.quantity + 1)}
+                                                                className="px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100"
+                                                            >
+                                                                +
+                                                            </button>
+                                                        </div>
+
+                                                        {/* Price */}
+                                                        <div className="w-20 text-right font-medium">
+                                                            ₹{i.unitPrice * i.quantity}
+                                                        </div>
+
+                                                        {/* Remove button */}
+                                                        <button
+                                                            onClick={() => removeItem(i.id)}
+                                                            className="rounded-full px-2 py-1 font-semibold  text-red-400 hover:bg-red-50 hover:text-red-600"
+                                                        >
+                                                            <XMarkIcon className="h-5 w-5" />
+                                                        </button>
+                                                    </div>
+
                                                 </div>
                                             </div>
                                         ))}
