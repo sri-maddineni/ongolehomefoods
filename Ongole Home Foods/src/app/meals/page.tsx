@@ -32,7 +32,7 @@ export default function MealsPage() {
             <div className="grid gap-8 lg:grid-cols-3">
                 <div className="lg:col-span-2">
                     <div className="mb-4 rounded-lg border border-[var(--accent-yellow)]/40 bg-[#fff8e1] p-3 text-sm">
-                        Tomorrow’s menu updates at <span className="font-medium">6:00 PM</span>. Orders close at <span className="font-medium">12:00 PM</span> for next day.
+                     Orders close at <span className="font-medium">12:00 PM</span> for today.   Tomorrow’s menu updates at <span className="font-medium">6:00 PM evening</span>. 
                     </div>
                     <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">Meals</h1>
                     <p className="mt-2 opacity-80">Today&#39;s Orders close at 12:00 PM for next day.</p>
@@ -42,19 +42,7 @@ export default function MealsPage() {
                         <CartSidebar />
                     </div>
 
-                    <div className="mt-6 rounded-xl border p-4">
-                        <h2 className="font-medium">Extras</h2>
-                        <div className="mt-3 flex flex-wrap gap-3 text-sm">
-                            <div className="flex items-center gap-2">
-                                <ExtraCountBadge type="extraCurry" />
-                                <button onClick={() => addExtra("extraCurry")} className="rounded-full border px-3 py-2 hover:bg-[var(--accent-green)] hover:text-white">Extra Curry (+₹20)</button>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <ExtraCountBadge type="curd" />
-                                <button onClick={() => addExtra("curd")} className="rounded-full border px-3 py-2 hover:bg-[var(--accent-green)] hover:text-white">Curd (+₹10)</button>
-                            </div>
-                        </div>
-                    </div>
+                    
 
                     <div className="mt-6 rounded-xl border border-[var(--accent-green)] p-4">
                         <h2 className="font-medium text-[var(--accent-green)]">Today&#39;s Complete Plate</h2>
@@ -91,6 +79,24 @@ export default function MealsPage() {
                             ))}
                         </div>
                     </div>
+
+
+                    <div className="mt-6 rounded-xl border p-4">
+                        <h2 className="font-medium">Extras</h2>
+                        <div className="mt-3 flex flex-wrap gap-3 text-sm">
+                            <div className="flex items-center gap-2">
+                                <ExtraCountBadge type="extraCurry" />
+                                <button onClick={() => addExtra("extraCurry")} className="rounded-full border px-3 py-2 hover:bg-[var(--accent-green)] hover:text-white">Extra Curry (+₹20)</button>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <ExtraCountBadge type="curd" />
+                                <button onClick={() => addExtra("curd")} className="rounded-full border px-3 py-2 hover:bg-[var(--accent-green)] hover:text-white">Curd (+₹10)</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+
                 </div>
                 <div className="hidden md:block">
                     <CartSidebar />

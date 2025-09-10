@@ -4,7 +4,7 @@ import { useCart } from "@/context/CartContext";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 
-const WHATSAPP = "+91 6304214514";
+const WHATSAPP = "+91 63042 14514";
 
 export default function CheckoutPage() {
     const { items, subtotal, clearCart } = useCart();
@@ -72,7 +72,7 @@ export default function CheckoutPage() {
                         <div className="mt-6 space-y-3">
                             <div className="rounded-lg border p-3 text-sm">
                                 <div className="font-medium">Payment</div>
-                                <p className="mt-1 opacity-80">Pay via UPI to phone <span className="font-medium"> 6304214514</span>. QR will be added later.</p>
+                                <p className="mt-1 opacity-80">Pay via UPI to phone <span className="font-medium"> 63042 14514</span>. QR will be added later.</p>
                             </div>
                             <a
                                 className={`block rounded-full px-4 py-3 text-center ${canSubmit ? "bg-foreground text-background" : "border opacity-60"}`}

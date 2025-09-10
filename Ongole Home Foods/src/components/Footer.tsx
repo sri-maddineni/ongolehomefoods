@@ -22,7 +22,7 @@ export default function Footer() {
                     <div>
                         <h4 className="font-medium">Contact</h4>
                         <ul className="mt-2 space-y-2 text-sm">
-                            <li className="flex items-center gap-2"><PhoneIcon className="h-4 w-4" /> +91 6304214514</li>
+                            <li className="flex items-center gap-2"><PhoneIcon className="h-4 w-4" /> +91 63042 14514</li>
                             <li className="flex items-center gap-2"><EnvelopeIcon className="h-4 w-4" /> ongolehomefoods@gmail.com</li>
                             <li className="flex items-center gap-2"><MapPinIcon className="h-4 w-4" /> Ashoka One Mall, Kukatpally, Hyderabad</li>
                         </ul>
